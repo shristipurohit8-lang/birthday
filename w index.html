@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Surprise</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.8s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 2rem;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .message {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="message">
+    Happy Birthday! 🎉<br>
+    Wishing you all the love and happiness.
+  </div>
+
+  <script>
+    const backgrounds = [
+      "https://i.pinimg.com/originals/7e/24/f7/7e24f7a69bfa21b0e6d22c5a759d4c7c.jpg",
+      "https://i.pinimg.com/originals/90/06/f6/9006f6ba399bdf839129be2e2687a8c7.jpg",
+      "https://image.shutterstock.com/image-photo/birthday-background-hearts-love-260nw-1031379685.jpg"
+    ];
+
+    let index = 0;
+
+    function changeBackground() {
+      document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
+      index = (index + 1) % backgrounds.length;
+    }
+
+    // Initial call
+    changeBackground();
+
+    // Change background every 1 second
+    setInterval(changeBackground, 1000);
+  </script>
+</body>
+</html>
